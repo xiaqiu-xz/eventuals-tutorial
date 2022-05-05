@@ -1,0 +1,31 @@
+workspace(name = "com_github_3rdparty_eventuals_grpc_examples")
+
+########################################################################
+
+load("@bazel_tools//tools/build_defs/repo:git.bzl", "git_repository")
+
+########################################################################
+
+git_repository(
+    name = "com_github_3rdparty_eventuals",
+    remote = "https://github.com/3rdparty/eventuals",
+    commit = "5920f82570dfc288bd6218a52d961ce971d7675f",
+    shallow_since = "1651712342 +0000",
+    recursive_init_submodules = True,
+)
+
+load("@com_github_3rdparty_eventuals//bazel:eventuals_submodules.bzl", "eventuals_submodules")
+eventuals_submodules()
+
+load("@com_github_3rdparty_eventuals//bazel:external_repos.bzl", eventuals_repos = "repos")
+eventuals_repos()
+
+load("@com_github_3rdparty_eventuals//bazel:external_deps.bzl", eventuals_deps = "deps")
+eventuals_deps()
+
+########################################################################
+
+load("@com_github_grpc_grpc//bazel:grpc_extra_deps.bzl", "grpc_extra_deps")
+grpc_extra_deps()
+
+########################################################################

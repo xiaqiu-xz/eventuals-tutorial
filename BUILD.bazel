@@ -1,0 +1,331 @@
+load("@rules_cc//cc:defs.bzl", "cc_library")
+
+cc_binary(
+    name = "pipelines-1",
+    srcs = ["pipelines-1.cc"],
+    deps = [
+        "@com_github_3rdparty_eventuals//eventuals",
+    ],
+    # NOTE: at least on macOS we can't link statically because there
+    # are certain system libraries that require dynamic loading.
+    linkstatic = False,
+)
+
+cc_binary(
+    name = "pipelines-2",
+    srcs = ["pipelines-2.cc"],
+    deps = [
+        "@com_github_3rdparty_eventuals//eventuals",
+    ],
+    # NOTE: at least on macOS we can't link statically because there
+    # are certain system libraries that require dynamic loading.
+    linkstatic = False,
+)
+
+cc_binary(
+    name = "pipelines-3",
+    srcs = ["pipelines-3.cc"],
+    deps = [
+        "@com_github_3rdparty_eventuals//eventuals",
+    ],
+    # NOTE: at least on macOS we can't link statically because there
+    # are certain system libraries that require dynamic loading.
+    linkstatic = False,
+)
+
+cc_binary(
+    name = "pipelines-4",
+    srcs = ["pipelines-4.cc"],
+    deps = [
+        "@com_github_3rdparty_eventuals//eventuals",
+    ],
+    # NOTE: at least on macOS we can't link statically because there
+    # are certain system libraries that require dynamic loading.
+    linkstatic = False,
+)
+
+cc_binary(
+    name = "pipelines-5",
+    srcs = ["pipelines-5.cc"],
+    deps = [
+        "@com_github_3rdparty_eventuals//eventuals",
+    ],
+    # NOTE: at least on macOS we can't link statically because there
+    # are certain system libraries that require dynamic loading.
+    linkstatic = False,
+)
+
+cc_binary(
+    name = "pipelines-6",
+    srcs = ["pipelines-6.cc"],
+    deps = [
+        "@com_github_3rdparty_eventuals//eventuals",
+    ],
+    # NOTE: at least on macOS we can't link statically because there
+    # are certain system libraries that require dynamic loading.
+    linkstatic = False,
+)
+
+cc_binary(
+    name = "pipelines-7",
+    srcs = ["pipelines-7.cc"],
+    deps = [
+        "@com_github_3rdparty_eventuals//eventuals",
+    ],
+    # NOTE: at least on macOS we can't link statically because there
+    # are certain system libraries that require dynamic loading.
+    linkstatic = False,
+)
+
+cc_binary(
+    name = "pipelines-8",
+    srcs = ["pipelines-8.cc"],
+    deps = [
+        "@com_github_3rdparty_eventuals//eventuals",
+    ],
+    # NOTE: at least on macOS we can't link statically because there
+    # are certain system libraries that require dynamic loading.
+    linkstatic = False,
+)
+
+cc_binary(
+    name = "pipelines-9",
+    srcs = ["pipelines-9.cc"],
+    deps = [
+        "@com_github_3rdparty_eventuals//eventuals",
+    ],
+    # NOTE: at least on macOS we can't link statically because there
+    # are certain system libraries that require dynamic loading.
+    linkstatic = False,
+)
+
+cc_binary(
+    name = "pipelines-10",
+    srcs = ["pipelines-10.cc"],
+    deps = [
+        "@com_github_3rdparty_eventuals//eventuals",
+    ],
+    # NOTE: at least on macOS we can't link statically because there
+    # are certain system libraries that require dynamic loading.
+    linkstatic = False,
+)
+
+cc_binary(
+    name = "pipelines-11",
+    srcs = ["pipelines-11.cc"],
+    deps = [
+        "@com_github_3rdparty_eventuals//eventuals",
+    ],
+    # NOTE: at least on macOS we can't link statically because there
+    # are certain system libraries that require dynamic loading.
+    linkstatic = False,
+)
+
+cc_binary(
+    name = "pipelines-12",
+    srcs = ["pipelines-12.cc"],
+    deps = [
+        "@com_github_3rdparty_eventuals//eventuals",
+    ],
+    # NOTE: at least on macOS we can't link statically because there
+    # are certain system libraries that require dynamic loading.
+    linkstatic = False,
+)
+
+cc_binary(
+    name = "pipelines-13",
+    srcs = ["pipelines-13.cc"],
+    deps = [
+        "@com_github_3rdparty_eventuals//eventuals",
+    ],
+    # NOTE: at least on macOS we can't link statically because there
+    # are certain system libraries that require dynamic loading.
+    linkstatic = False,
+)
+
+cc_binary(
+    name = "pipelines-14",
+    srcs = ["pipelines-14.cc"],
+    deps = [
+        "@com_github_3rdparty_eventuals//eventuals",
+    ],
+    # NOTE: at least on macOS we can't link statically because there
+    # are certain system libraries that require dynamic loading.
+    linkstatic = False,
+)
+
+cc_binary(
+    name = "errors-1",
+    srcs = ["errors-1.cc"],
+    deps = [
+        "@com_github_3rdparty_eventuals//eventuals",
+    ],
+    # NOTE: at least on macOS we can't link statically because there
+    # are certain system libraries that require dynamic loading.
+    linkstatic = False,
+)
+
+cc_binary(
+    name = "errors-2",
+    srcs = ["errors-2.cc"],
+    deps = [
+        "@com_github_3rdparty_eventuals//eventuals",
+    ],
+    # NOTE: at least on macOS we can't link statically because there
+    # are certain system libraries that require dynamic loading.
+    linkstatic = False,
+)
+
+cc_binary(
+    name = "errors-3",
+    srcs = ["errors-3.cc"],
+    deps = [
+        "@com_github_3rdparty_eventuals//eventuals",
+    ],
+    # NOTE: at least on macOS we can't link statically because there
+    # are certain system libraries that require dynamic loading.
+    linkstatic = False,
+)
+
+cc_binary(
+    name = "errors-4",
+    srcs = ["errors-4.cc"],
+    deps = [
+        "@com_github_3rdparty_eventuals//eventuals",
+    ],
+    # NOTE: at least on macOS we can't link statically because there
+    # are certain system libraries that require dynamic loading.
+    linkstatic = False,
+)
+
+cc_binary(
+    name = "eventual-1",
+    srcs = ["eventual-1.cc"],
+    deps = [
+        "@com_github_3rdparty_eventuals//eventuals",
+    ],
+    # NOTE: at least on macOS we can't link statically because there
+    # are certain system libraries that require dynamic loading.
+    linkstatic = False,
+)
+
+cc_binary(
+    name = "eventual-2",
+    srcs = ["eventual-2.cc"],
+    deps = [
+        "@com_github_3rdparty_eventuals//eventuals",
+    ],
+    # NOTE: at least on macOS we can't link statically because there
+    # are certain system libraries that require dynamic loading.
+    linkstatic = False,
+)
+
+cc_binary(
+    name = "eventual-3",
+    srcs = ["eventual-3.cc"],
+    deps = [
+        "@com_github_3rdparty_eventuals//eventuals",
+    ],
+    # NOTE: at least on macOS we can't link statically because there
+    # are certain system libraries that require dynamic loading.
+    linkstatic = False,
+)
+
+cc_binary(
+    name = "eventual-4",
+    srcs = ["eventual-4.cc"],
+    deps = [
+        "@com_github_3rdparty_eventuals//eventuals",
+    ],
+    # NOTE: at least on macOS we can't link statically because there
+    # are certain system libraries that require dynamic loading.
+    linkstatic = False,
+)
+
+cc_binary(
+    name = "stream-1",
+    srcs = ["stream-1.cc"],
+    deps = [
+        "@com_github_3rdparty_eventuals//eventuals",
+    ],
+    # NOTE: at least on macOS we can't link statically because there
+    # are certain system libraries that require dynamic loading.
+    linkstatic = False,
+)
+
+cc_binary(
+    name = "interrupt-1",
+    srcs = ["interrupt-1.cc"],
+    deps = [
+        "@com_github_3rdparty_eventuals//eventuals",
+    ],
+    # NOTE: at least on macOS we can't link statically because there
+    # are certain system libraries that require dynamic loading.
+    linkstatic = False,
+)
+
+cc_binary(
+    name = "task-1",
+    srcs = ["task-1.cc"],
+    deps = [
+        "@com_github_3rdparty_eventuals//eventuals",
+    ],
+    # NOTE: at least on macOS we can't link statically because there
+    # are certain system libraries that require dynamic loading.
+    linkstatic = False,
+)
+
+cc_binary(
+    name = "task-2",
+    srcs = ["task-2.cc"],
+    deps = [
+        "@com_github_3rdparty_eventuals//eventuals",
+    ],
+    # NOTE: at least on macOS we can't link statically because there
+    # are certain system libraries that require dynamic loading.
+    linkstatic = False,
+)
+
+cc_binary(
+    name = "task-3",
+    srcs = ["task-3.cc"],
+    deps = [
+        "@com_github_3rdparty_eventuals//eventuals",
+    ],
+    # NOTE: at least on macOS we can't link statically because there
+    # are certain system libraries that require dynamic loading.
+    linkstatic = False,
+)
+
+cc_binary(
+    name = "task-4",
+    srcs = ["task-4.cc"],
+    deps = [
+        "@com_github_3rdparty_eventuals//eventuals",
+    ],
+    # NOTE: at least on macOS we can't link statically because there
+    # are certain system libraries that require dynamic loading.
+    linkstatic = False,
+)
+
+cc_binary(
+    name = "generator-1",
+    srcs = ["generator-1.cc"],
+    deps = [
+        "@com_github_3rdparty_eventuals//eventuals",
+    ],
+    # NOTE: at least on macOS we can't link statically because there
+    # are certain system libraries that require dynamic loading.
+    linkstatic = False,
+)
+
+cc_binary(
+    name = "expected-1",
+    srcs = ["expected-1.cc"],
+    deps = [
+        "@com_github_3rdparty_eventuals//eventuals",
+    ],
+    # NOTE: at least on macOS we can't link statically because there
+    # are certain system libraries that require dynamic loading.
+    linkstatic = False,
+)
