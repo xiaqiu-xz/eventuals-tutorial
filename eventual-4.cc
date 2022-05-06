@@ -9,7 +9,7 @@ int main(int argc, char** argv) {
   auto e = []() {
     return Eventual<std::string>()
         .context("never slept!")
-        .start([](auto& k) {
+        .start([](auto& context, auto& k) {
           auto thread = std::thread(
               [&k]() mutable {
                 sleep(2);
@@ -23,7 +23,7 @@ int main(int argc, char** argv) {
           CHECK_STREQ("error!", e.what());
           k.Start(context);
         })
-        .stop([](auto& k) {
+        .stop([](auto& context, auto& k) {
           k.Stop(); // Propagate stop.
         });
   };

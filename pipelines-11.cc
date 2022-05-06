@@ -14,7 +14,7 @@ int main(int argc, char** argv) {
              s[0] = std::toupper(s[0]);
              result += std::move(s);
            })
-      | Loop();
+        | Loop();
   };
 
   *e();
