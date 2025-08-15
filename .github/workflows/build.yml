@@ -1,41 +1,24 @@
-name: Run Eventuals Tutorial
-
 on:
   push:
-    branches: [ main, master ]
+    branches:
+      - "main"
+  pull_request:
+    branches:
+      - "**"
   workflow_dispatch:
 
 jobs:
-  run-eventuals:
+  build:
+    name: Build
     runs-on: ubuntu-latest
-
     steps:
-      # 拉取代码
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v3
 
-      # 安装 Bazelisk
-      - uses: bazelbuild/setup-bazelisk@v2
-        with:
-          bazelisk-version: 1.x
+      - name: Build all examples
+        run: bazel build ...
+        shell: bash
 
-      # 可选：缓存 Bazel（简单 key，避免 400 错误）
-      - name: Cache Bazel
-        uses: actions/cache@v3
-        with:
-          path: ~/.cache/bazel
-          key: bazel-cache-${{ runner.os }}
-
-      # 安装依赖（如果你有 WORKSPACE.deps 或者 extern 目录）
-      - name: Fetch Bazel dependencies
-        run: |
-          bazel fetch //...
-
-      # 构建目标
-      - name: Build pipelines-8
-        run: |
-          bazel build //:pipelines-8
-
-      # 运行目标并打印输出
+     # 运行目标并打印输出
       - name: Run pipelines-8
         run: |
           bazel run //:pipelines-8
