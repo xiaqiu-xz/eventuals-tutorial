@@ -1,21 +1,37 @@
+name: Run Eventuals Tutorial
+
+# 触发条件
 on:
   push:
-    branches:
-      - "main"
+    branches: [ main, master ]
   pull_request:
-    branches:
-      - "**"
+    branches: [ main, master ]
   workflow_dispatch:
 
 jobs:
-  build:
-    name: Build
+  build-and-run:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v3
+    # 1. 检出代码
+    - name: Checkout repository
+      uses: actions/checkout@v4
 
-      - name: Build all examples
-        run: bazel build ...
-        shell: bash
+    # 2. 安装 Bazel (通过 Bazelisk)
+    - name: Setup Bazelisk
+      uses: bazelbuild/setup-bazelisk@v2
 
+    # 3. 缓存 Bazel 构建输出，加快重复构建
+    - name: Cache Bazel
+      uses: actions/cache@v3
+      with:
+        path: ~/.cache/bazel
+        key: ${{ runner.os }}-bazel-${{ hashFiles('**/*.bazel', '**/*.bzl') }}
 
+    # 4. Bazel 构建你的 target
+    - name: Build pipelines-8
+      run: bazel build :pipelines-8
+
+    # 5. 运行最终程序并输出日志
+    - name: Run pipelines-8
+      run: ./bazel-bin/pipelines-8
