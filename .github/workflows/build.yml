@@ -1,15 +1,12 @@
-name: Run Eventuals Tutorial
+name: Run Eventuals Example
 
-# 触发条件
 on:
   push:
-    branches: [ main, master ]
-  pull_request:
     branches: [ main, master ]
   workflow_dispatch:
 
 jobs:
-  build-and-run:
+  run-eventuals:
     runs-on: ubuntu-latest
 
     steps:
@@ -17,21 +14,27 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v4
 
-    # 2. 安装 Bazel (通过 Bazelisk)
+    # 2. 安装 Bazelisk
     - name: Setup Bazelisk
       uses: bazelbuild/setup-bazelisk@v2
+      with:
+        bazelisk-version: 1.x
 
-    # 3. 缓存 Bazel 构建输出，加快重复构建
+    # 3. 可选缓存 Bazel 构建（key 简单，避免 400）
     - name: Cache Bazel
       uses: actions/cache@v3
       with:
         path: ~/.cache/bazel
-        key: ${{ runner.os }}-bazel-${{ hashFiles('**/*.bazel', '**/*.bzl') }}
+        key: bazel-${{ runner.os }}-cache
 
-    # 4. Bazel 构建你的 target
+    # 4. 安装依赖（例如 git submodules 或 extern 库）
+    - name: Update submodules
+      run: git submodule update --init --recursive
+
+    # 5. 构建 eventuals 程序
     - name: Build pipelines-8
-      run: bazel build :pipelines-8
+      run: bazel build //:pipelines-8
 
-    # 5. 运行最终程序并输出日志
+    # 6. 运行 eventuals 程序并打印输出
     - name: Run pipelines-8
-      run: ./bazel-bin/pipelines-8
+      run: bazel run //:pipelines-8
